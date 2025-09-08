@@ -1,0 +1,22 @@
+# Prettier ignore file - Demo
+# Các file và thư mục không cần format
+
+node_modules/
+dist/
+build/
+coverage/
+*.min.js
+*.min.css
+*.bundle.js
+package-lock.json
+yarn.lock
+.git/
+.vscode/
+.idea/
+
+# Generated files
+*.generated.js
+*.generated.ts
+
+# Config files có format đặc biệt
+.editorconfig

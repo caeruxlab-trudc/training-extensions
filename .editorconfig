@@ -1,0 +1,49 @@
+# EditorConfig for VS Code - Demo configuration
+# Thiết lập các quy tắc formatting cơ bản cho tất cả các file
+
+root = true
+
+# Quy tắc chung cho tất cả file
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Quy tắc riêng cho JavaScript và TypeScript
+[*.{js,ts}]
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# Quy tắc cho Vue files
+[*.vue]
+indent_style = space
+indent_size = 2
+
+# Quy tắc cho JSON files
+[*.json]
+indent_style = space
+indent_size = 2
+
+# Quy tắc cho CSS/SCSS
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+# Quy tắc cho Markdown
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# Quy tắc cho package.json
+[package.json]
+indent_style = space
+indent_size = 2
+
+# Quy tắc cho YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2

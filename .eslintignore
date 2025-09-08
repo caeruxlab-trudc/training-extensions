@@ -1,0 +1,22 @@
+# ESLint ignore file - Demo
+# Các file và thư mục không cần lint
+
+node_modules/
+dist/
+build/
+coverage/
+*.min.js
+*.min.css
+*.bundle.js
+package-lock.json
+yarn.lock
+
+# Generated files
+*.generated.js
+*.generated.ts
+
+# Config files
+.eslintrc.js
+.prettierrc.js
+webpack.config.js
+vite.config.js

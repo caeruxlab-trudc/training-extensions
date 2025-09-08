@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "shardulm94.trailing-spaces",
+    "octref.vetur"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "hookyqr.beautify"
+  ]
+}

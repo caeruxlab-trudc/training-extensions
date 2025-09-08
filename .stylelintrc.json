@@ -1,0 +1,74 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": ["*.css", "**/*.css"],
+      "rules": {
+        "at-rule-no-unknown": true
+      }
+    }
+  ],
+  "rules": {
+    "indentation": 2,
+    "string-quotes": ["single", { "avoidEscape": true }],
+    "no-duplicate-selectors": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-named": "never",
+    "selector-combinator-space-after": "always",
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "declaration-block-single-line-max-declarations": 1,
+    "property-no-unknown": true,
+    "number-leading-zero": "always",
+    "number-no-trailing-zeros": true,
+    "length-zero-no-unit": true,
+    "unit-case": "lower",
+    "value-list-comma-space-after": "always",
+    "shorthand-property-no-redundant-values": true,
+    "comment-whitespace-inside": "always",
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extend",
+          "at-root",
+          "debug",
+          "warn",
+          "error",
+          "if",
+          "else",
+          "for",
+          "each",
+          "while",
+          "mixin",
+          "include",
+          "content",
+          "return",
+          "function",
+          "use",
+          "forward"
+        ]
+      }
+    ],
+    "selector-pseudo-class-case": "lower",
+    "selector-pseudo-element-case": "lower",
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-type-case": "lower",
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-colon-space-before": "never",
+    "media-feature-colon-space-after": "always",
+    "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+  }
+}

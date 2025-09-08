@@ -1,0 +1,124 @@
+/* SCSS Demo File - Stylelint Extension Demo */
+
+/* File này minh họa Stylelint với SCSS syntax */
+
+// Import với lỗi
+@import url('variables');
+@import url('mixins');
+
+// Variables với lỗi case và naming
+$Primary-Color: #f00;
+$font_size: 16px;
+$margin-Value: 10px;
+
+// Mixin với lỗi indentation
+@mixin button-style() {
+  padding: 10px 20px;
+  background-color: $Primary-Color;
+  border: none;
+  cursor: pointer;
+}
+
+// Nested selectors với lỗi formatting
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+
+  .card-header {
+    padding: 15px;
+    background-color: #f8f9fa;
+
+    h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+  }
+
+  .card-body {
+    padding: 20px;
+
+    p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    // Button với mixin
+    .btn {
+      @include button-style();
+
+      margin-top: 10px;
+    }
+  }
+}
+
+// Function với lỗi
+@function calculate-rem($px) {
+  @return $px/16px * 1rem;
+}
+
+// Placeholder với lỗi
+%clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Media queries với lỗi spacing
+@media (max-width: 767px) {
+  .card {
+    margin: 10px;
+
+    .card-header {
+      padding: 10px;
+    }
+  }
+}
+
+// Loop với lỗi
+@for $i from 1 through 5 {
+  .margin-#{$i} {
+    margin: #{$i * 5}px;
+  }
+}
+
+// Map và each với lỗi
+$colors: (
+  primary: #007bff,
+  secondary: #6c757d,
+  danger: #dc3545,
+);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+// Complex selector với lỗi
+.navigation {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+}

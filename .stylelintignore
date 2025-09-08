@@ -1,0 +1,23 @@
+# Stylelint ignore file - Demo
+# Các file và thư mục không cần lint CSS
+
+node_modules/
+dist/
+build/
+coverage/
+*.min.css
+*.bundle.css
+
+# Generated files
+*.generated.css
+
+# Vendor files
+vendor/
+libs/
+
+# Documentation
+*.md
+
+# Config files
+*.js
+*.json
