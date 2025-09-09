@@ -3,7 +3,9 @@
   <div class="user-component">
     <header class="user-header">
       <h1>{{ title }}</h1>
-      <p class="user-count">Total Users: {{ users.length }}</p>
+      <p class="user-count">
+        Total Users: {{ users.length }}
+      </p>
     </header>
 
     <!-- Search input với debounce -->
@@ -14,7 +16,7 @@
         placeholder="Search users..."
         class="search-input"
         @input="handleSearch"
-      />
+      >
     </div>
 
     <!-- User list -->
@@ -26,17 +28,24 @@
         :class="{ 'user-inactive': !user.isActive }"
       >
         <div class="user-info">
-          <h3 class="user-name">{{ user.name }}</h3>
-          <p class="user-email">{{ user.email }}</p>
-          <span class="user-status" :class="user.isActive ? 'status-active' : 'status-inactive'">
+          <h3 class="user-name">
+            {{ user.name }}
+          </h3>
+          <p class="user-email">
+            {{ user.email }}
+          </p>
+          <span
+            class="user-status"
+            :class="user.isActive ? 'status-active' : 'status-inactive'"
+          >
             {{ user.isActive ? 'Active' : 'Inactive' }}
           </span>
         </div>
 
         <div class="user-actions">
           <button
-            @click="toggleUserStatus(user.id)"
             :class="user.isActive ? 'btn-deactivate' : 'btn-activate'"
+            @click="toggleUserStatus(user.id)"
           >
             {{ user.isActive ? 'Deactivate' : 'Activate' }}
           </button>
@@ -45,22 +54,45 @@
     </div>
 
     <!-- Empty state -->
-    <div v-if="filteredUsers.length === 0" class="empty-state">
+    <div
+      v-if="filteredUsers.length === 0"
+      class="empty-state"
+    >
       <p>No users found.</p>
     </div>
 
     <!-- Add user form -->
-    <form @submit.prevent="addNewUser" class="add-user-form">
+    <form
+      class="add-user-form"
+      @submit.prevent="addNewUser"
+    >
       <h2>Add New User</h2>
       <div class="form-group">
         <label for="userName">Name:</label>
-        <input id="userName" v-model="newUser.name" type="text" required class="form-input" />
+        <input
+          id="userName"
+          v-model="newUser.name"
+          type="text"
+          required
+          class="form-input"
+        >
       </div>
       <div class="form-group">
         <label for="userEmail">Email:</label>
-        <input id="userEmail" v-model="newUser.email" type="email" required class="form-input" />
+        <input
+          id="userEmail"
+          v-model="newUser.email"
+          type="email"
+          required
+          class="form-input"
+        >
       </div>
-      <button type="submit" class="btn-submit">Add User</button>
+      <button
+        type="submit"
+        class="btn-submit"
+      >
+        Add User
+      </button>
     </form>
   </div>
 </template>
@@ -96,7 +128,7 @@ const filteredUsers = computed(() => {
   return users.value.filter(
     (user) =>
       user.name.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchQuery.value.toLowerCase())
+      user.email.toLowerCase().includes(searchQuery.value.toLowerCase()),
   );
 });
 

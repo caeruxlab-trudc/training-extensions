@@ -41,7 +41,7 @@ export class UserManager {
     return this.users.filter(
       (user) =>
         user.name.toLowerCase().includes(query.toLowerCase()) ||
-        user.email.toLowerCase().includes(query.toLowerCase())
+        user.email.toLowerCase().includes(query.toLowerCase()),
     );
   }, 300);
 
