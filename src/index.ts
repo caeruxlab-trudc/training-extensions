@@ -49,7 +49,7 @@ export class UserManager {
   public async loadUsers(): Promise<void> {
     try {
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      this.users = response.data.map((user: any) => ({
+      this.users = response.data.map((user: User) => ({
         id: user.id,
         name: user.name,
         email: user.email,
