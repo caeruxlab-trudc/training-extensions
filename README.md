@@ -247,20 +247,46 @@ Thêm vào `settings.json` của workspace:
 
 ## 📝 Scripts Commands
 
-```bash
+````bash
 # Development
-npm run dev           # Chạy TypeScript với ts-node
+npm run dev           # Chạy TypeScript với ts-node (Development mode)
 
 # Building
-npm run build         # Compile TypeScript
+npm run build         # Build dự án (HTML, SCSS, JS, TS)
 
 # Code Quality
 npm run lint          # Chạy ESLint
-npm run lint:fix      # ESLint với auto-fix
-npm run lint:css      # Chạy Stylelint cho CSS/SCSS
-npm run lint:css:fix  # Stylelint với auto-fix
-npm run format        # Format với Prettier
-npm run format:check  # Kiểm tra formatting
+npm run lint:css      # Chạy Stylelint cho SCSS/CSS
+npm run check-all     # Chạy tất cả checks
+
+## 🌐 Local Development Server
+
+**Sử dụng Live Server Extension (Khuyên dùng):**
+
+1. **Cài đặt Extension:** Live Server by Ritwick Dey trong VS Code
+2. **Build dự án:** `npm run build`
+3. **Start server:** Right-click vào `dist/index.html` → "Open with Live Server"
+4. **Truy cập:** http://localhost:8080
+
+**Workflow Development:**
+```bash
+# 1. Code changes trong src/
+# 2. Rebuild project
+npm run build
+# 3. Live Server auto-reload trang web
+````
+
+File `.vscode/settings.json` đã config sẵn Live Server để:
+
+- Serve từ folder `dist/`
+- Port: 8080
+- Auto-reload khi files thay đổi
+  npm run lint:fix # ESLint với auto-fix
+  npm run lint:css # Chạy Stylelint cho CSS/SCSS
+  npm run lint:css:fix # Stylelint với auto-fix
+  npm run format # Format với Prettier
+  npm run format:check # Kiểm tra formatting
+
 ```
 
 ## 🎯 Learning Outcomes
@@ -305,3 +331,4 @@ Mỗi extension có thể customize qua:
 ---
 
 **Happy Coding! 🚀**
+```

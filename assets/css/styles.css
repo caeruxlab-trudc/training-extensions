@@ -1,0 +1,723 @@
+/* ==========================================================================
+   CSS Reset & Base Styles - BPO Services
+   ========================================================================== */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    'Noto Sans JP',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   CSS Variables - BPO Color Palette
+   ========================================================================== */
+
+:root {
+  /* Colors from Figma design */
+  --color-primary: #189655;
+  --color-secondary: #333;
+  --color-accent: #c4d831;
+  --color-background: #f5f5f5;
+  --color-white: #fff;
+  --color-light-green: #f3f7d6;
+  --color-navy: #073190;
+  --color-gray-light: #f8f8f8;
+  --color-gray-border: #ccc;
+
+  /* Typography */
+  --font-family-base: 'Noto Sans JP', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Font Sizes */
+  --font-size-h1: 4rem;
+  --font-size-h2: 3.2rem;
+  --font-size-h3: 2.4rem;
+  --font-size-body: 1.6rem;
+  --font-size-caption: 1.4rem;
+  --font-size-badge: 2rem;
+  --font-size-button: 1.8rem;
+
+  /* Spacing */
+  --spacing-xs: 0.8rem;
+  --spacing-sm: 1.6rem;
+  --spacing-md: 2.4rem;
+  --spacing-lg: 3.2rem;
+  --spacing-xl: 4.8rem;
+  --spacing-xxl: 6.4rem;
+  --spacing-section: 10rem;
+
+  /* Border Radius */
+  --radius-sm: 0.8rem;
+  --radius-md: 1.6rem;
+  --radius-lg: 2.4rem;
+  --radius-xl: 4rem;
+  --radius-pill: 4.8rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+.l-document {
+  padding: 20rem 0 0;
+}
+.slide-mv {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 10rem;
+}
+.slide-mv__inner {
+  position: relative;
+}
+.slide-mb__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 48px;
+  border: 2px solid #333;
+  background: #fff;
+  overflow: hidden;
+  padding: 93px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-mv .splide__slide {
+  border-radius: 40px;
+  border: 2px solid #333;
+  background: #fff;
+  overflow: hidden;
+}
+.slide-mv .splide__slide img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Responsive Slide Title
+   ========================================================================= */
+
+@media (max-width: 1200px) {
+  .slide-mb__title {
+    padding: 70px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slide-mb__title {
+    padding: 50px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-mb__title {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Section Costs - 費用イメージ
+   ========================================================================== */
+
+.section-costs {
+  padding: var(--spacing-section) 0;
+  background-color: var(--color-background);
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.box-costs-title {
+  background-color: var(--color-primary);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border: 2px solid var(--color-secondary);
+  border-bottom: none;
+  display: inline-block;
+  position: relative;
+}
+
+.costs__title {
+  color: var(--color-white);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.costs__content {
+  margin-top: -2px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-secondary);
+  border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+  padding: 96px 110px 88px;
+}
+
+.costs__pricing {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.costs__pricing-chart {
+  margin: 0 auto;
+}
+
+.costs__services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.costs__service-item {
+  background-color: var(--color-gray-light);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-height: 200px;
+}
+
+.box-service-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt-service-name {
+  color: var(--color-primary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  text-align: center;
+  background-color: var(--color-white);
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+}
+
+.costs__service-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex-grow: 1;
+}
+
+.costs__service-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.box-detail-badge {
+  background-color: var(--color-white);
+  padding: 0.6rem var(--spacing-sm);
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.txt-detail-label {
+  color: var(--color-secondary);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-normal);
+  white-space: nowrap;
+}
+
+.txt-detail-value {
+  color: var(--color-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  white-space: nowrap;
+}
+
+.costs__check-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.costs__note {
+  text-align: center;
+}
+
+.txt-note {
+  color: #777;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+}
+
+/* Layout container */
+.wrp-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .costs__services {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .costs__content {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-costs {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .costs__content {
+    padding: var(--spacing-lg) var(--spacing-md);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .costs__service-item {
+    min-height: auto;
+    padding: var(--spacing-md);
+  }
+
+  .costs__service-row {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   Section AI-Chat
+   ========================================================================= */
+
+.box-ai-chat {
+  padding: 10rem 0;
+}
+
+.ai-chat__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-direction: row-reverse; /* icon left, badge right */
+}
+
+.ai-chat__badge {
+  background: var(--color-light-green);
+  border-radius: var(--radius-pill);
+  padding: 12px 32px;
+}
+
+.txt-badge {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 2rem;
+}
+
+.ai-chat__icon {
+  width: 120px;
+  height: 120px;
+}
+
+.ai-chat__title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.ai-chat__title-text {
+  color: var(--color-primary);
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.ai-chat__subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.txt-subtitle {
+  color: var(--color-secondary);
+  font-size: 2.4rem;
+}
+.ai-chat__dot {
+  width: 12px;
+  height: 12px;
+}
+
+.ai-chat__content {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-border);
+  border-radius: var(--radius-xl);
+  padding: 100px 110px 110px;
+  position: relative;
+}
+
+.ai-chat__scope {
+  background: var(--color-gray-light);
+  border: 2px solid var(--color-gray-border);
+  border-radius: 24px;
+  padding: 24px 16px 32px;
+  margin-bottom: 4.6rem;
+  display: flex;
+  gap: 4px;
+}
+
+.scope__item {
+  display: grid;
+  flex: 1;
+}
+.scope__item + .scope__item {
+  margin-top: 0;
+}
+.scope__frame {
+  position: relative;
+  border-radius: 10px;
+  padding: 16px 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.scope__frame.is-dashed {
+  border: 2px dashed var(--color-gray-border);
+}
+.scope__frame.is-accent {
+  background: var(--color-light-green);
+  border-color: #c3d731;
+}
+.scope__frame.is-light {
+  background: #e3f1db;
+  border-color: #7dc076;
+}
+.scope__frame.is-strong {
+  background: #d6ece0;
+  border-color: var(--color-primary);
+}
+.scope__frame.is-gray {
+  background: #eee;
+  border-color: #c5c5c5;
+}
+.txt-scope-ttl {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  font-size: 1.8rem;
+}
+.txt-scope-cap {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+}
+.box-scope-row {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+.badge-sub {
+  background: #fff;
+  color: var(--color-primary);
+  border-radius: 40px;
+  padding: 3px 8px;
+  font-size: 1.2rem;
+}
+
+.ai-chat__comparisons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  position: relative;
+  align-items: stretch; /* make cards equal height per row */
+  grid-auto-rows: 1fr; /* rows take equal height */
+}
+
+/* dashed connectors between scope box and cards */
+.ai-chat__connects {
+  position: absolute;
+  inset: -32px 0 auto 0; /* rise above cards header a bit */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  pointer-events: none;
+}
+.ai-chat__connects .connect {
+  height: 16px;
+  border: 2px solid;
+  border-top: none;
+  position: relative;
+}
+.ai-chat__connects .connect--orange {
+  border-color: #ec6b00;
+}
+.ai-chat__connects .connect--orange::before {
+  border-color: #ec6b00 transparent transparent transparent;
+}
+.ai-chat__connects .connect--green {
+  border-color: #189655;
+}
+.ai-chat__connects .connect--green::before {
+  border-color: #189655 transparent transparent transparent;
+}
+.connect::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-width: 10px;
+  border-style: solid;
+}
+.ai-chat__connects .connect--left {
+  margin: 0 4px 0 0;
+}
+.ai-chat__connects .connect--right {
+  margin: 0 0 0 4px;
+}
+
+.ai-chat__card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ai-chat__card-hd {
+  padding: 0 40px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+.ai-chat__card--ai .ai-chat__card-hd {
+  background: #ec6b00;
+}
+.ai-chat__card--bpo .ai-chat__card-hd {
+  background: var(--color-primary);
+}
+.txt-card-ttl {
+  margin-right: 16px;
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+  font-size: 2.4rem;
+}
+
+.ai-chat__card-bd {
+  padding: 40px 45px 48px;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  border: 3px solid transparent;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.ai-chat__card--ai .ai-chat__card-bd {
+  border-color: #ec6b00;
+}
+.ai-chat__card--bpo .ai-chat__card-bd {
+  border-color: var(--color-primary);
+}
+.txt-card-sub {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+}
+.txt-card-sub--ai {
+  color: #ec6b00;
+}
+.txt-card-sub--bpo {
+  color: var(--color-primary);
+}
+.txt-card-label {
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+.lst-card {
+  display: grid;
+  gap: 8px;
+}
+.lst-card__item {
+  display: flex;
+  gap: 7px;
+  align-items: start;
+}
+.icn-check {
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+}
+.txt-li {
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+}
+
+/* badge for BPO (rounded pill) */
+.badge-bpo {
+  background: #fff;
+  color: var(--color-primary);
+  border-radius: 40px;
+  padding: 9px 20px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-weight-bold);
+}
+
+/* list dot utility */
+.lst-dot {
+  list-style: disc;
+  padding-left: 1.6em;
+  display: grid;
+  gap: 8px;
+}
+.lst-dot li {
+  color: var(--color-secondary);
+  font-size: 1.6rem;
+}
+
+.ai-chat__deco {
+  position: absolute;
+}
+.ai-chat__deco--01 {
+  left: 410px;
+  top: -46px;
+  width: 119px;
+  height: 148px;
+}
+.ai-chat__deco--02 {
+  right: -25px;
+  bottom: -23px;
+  width: 163px;
+  height: 122px;
+}
+
+.ai-chat__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+.ai-chat__btn {
+  background: var(--color-navy);
+  color: #fff;
+  padding: 18px 53px;
+  border-radius: 0.8rem;
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: 1024px) {
+  .ai-chat__content {
+    padding: 48px 24px;
+  }
+  .ai-chat__comparisons {
+    grid-template-columns: 1fr;
+  }
+  .ai-chat__deco {
+    display: none;
+  }
+  .ai-chat__scope {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .box-ai-chat {
+    padding: 8rem 0;
+  }
+  .ai-chat__title-text {
+    font-size: 3.2rem;
+  }
+  .txt-subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* ==========================================================================
+   Section CV (CTA)
+   ========================================================================= */
+
+.box-cv {
+  position: relative;
+  margin-top: -8rem;
+}
+.cv-hero {
+  background: #ec6b00;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cv-hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.txt-cv-cta {
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+  font-size: 4rem;
+}
+.cv-icn {
+  width: 120px;
+  height: 120px;
+}
+.box-pct-contact {
+  position: relative;
+  max-width: 1440px;
+  margin: -8rem auto 0;
+  z-index: 3;
+  padding-top: 8rem;
+  background: #fff;
+}

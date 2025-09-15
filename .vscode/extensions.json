@@ -7,8 +7,5 @@
     "shardulm94.trailing-spaces",
     "octref.vetur"
   ],
-  "unwantedRecommendations": [
-    "ms-vscode.vscode-typescript-next",
-    "hookyqr.beautify"
-  ]
+  "unwantedRecommendations": ["ms-vscode.vscode-typescript-next", "hookyqr.beautify"]
 }
